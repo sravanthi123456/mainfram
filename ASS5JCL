@@ -1,0 +1,17 @@
+//OZA081C JOB NOTIFY=&SYSUID                                            00010000
+//STEP1   EXEC PGM=IEFBR14                                              00020000
+//DD3     DD   DSN=OZA081.PSF8,                                         00030002
+// DISP=(MOD,CATLG,DELETE),                                             00040003
+// RECFM=FB,                                                            00050000
+// LRECL=80,                                                            00060000
+// BLKSIZE=800,                                                         00070000
+// SPACE=(TRK,(3,1))                                                    00080000
+//************SECOND STEP************                                   00090000
+//STEP2   EXEC PGM=IEFBR14                                              00110000
+//PDS     DD   DSN=OZA081.PDSF8,                                        00120002
+//             DISP=(MOD,CATLG,DELETE),                                 00130003
+//             RECFM=FB,                                                00140000
+//             LRECL=80,                                                00150000
+//             BLKSIZE=800,                                             00160000
+//             DSORG=PO,                                                00170000
+//             SPACE=(TRK,(1,2,1))                                      00180004
